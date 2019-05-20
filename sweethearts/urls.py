@@ -16,10 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import TemplateView
+from views import DeAuthView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
+    path('de-auth/', DeAuthView.as_view(), name='de-auth'),
     path('', 
         TemplateView.as_view(template_name='index.html'),
         name='index'),

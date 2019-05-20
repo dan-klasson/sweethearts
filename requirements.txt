@@ -1,3 +1,4 @@
 django==2.2.1
 django-allauth==0.39.1
 django-bootstrap3==11.0.0
+facepy==1.0.10
