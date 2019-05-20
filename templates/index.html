@@ -5,7 +5,13 @@
 {% block title %}{% endblock %}
 
 {% block content %}
-    <a href="{% url 'facebook_login' %}">
-        <img src="{% static "facebook.png" %}" alt="facebook login" class="facebook-btn">
-    </a>
+
+    {% if not user.is_authenticated %}
+        <a href="{% url 'facebook_login' %}">
+            <img src="{% static "facebook.png" %}" alt="facebook login" class="facebook-btn">
+        </a>
+    {% else %}
+        <h1>{{ data.name }}</h1>
+        <img src="{{ data.picture.data.url }}" alt="facebook login" class="facebook-btn">
+    {% endif %}
 {% endblock %}
