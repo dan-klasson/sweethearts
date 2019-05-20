@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+{% load static %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+    <a href="{% url 'facebook_login' %}">
+        <img src="{% static "facebook.png" %}" alt="facebook login" class="facebook-btn">
+    </a>
+{% endblock %}
